@@ -76,7 +76,7 @@ const throwError = (path, fields, msg = null) => {
 
 const pathToStruct = (path) => {
   let struct;
-  struct = _.replace(path, new RegExp('[.]\\d($|.)', 'g'), '[].');
+  struct = _.replace(path, new RegExp('[.]\\d+($|.)', 'g'), '[].');
   struct = _.replace(struct, '..', '.');
   struct = _.trimEnd(struct, '.');
   return struct;
